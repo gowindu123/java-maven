@@ -8,6 +8,6 @@ RUN mvn -f /home/app/pom.xml clean package
 # Package stage
 #
 FROM openjdk:11-jre-slim
-COPY --from=build /home/app/target/1.1.0-SNAPSHOT /usr/local/lib/demo.jar
+COPY --from=build /home/app/target/1.1.0-SNAPSHOT.jar /usr/local/lib/demo.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/usr/local/lib/demo.jar"]
